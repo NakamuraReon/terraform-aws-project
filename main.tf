@@ -1,3 +1,14 @@
+# HCP Terraform向けの設定
+terraform {
+  cloud {
+    organization = "nakamura_test_organization"
+
+    workspaces {
+      name = "terraform-aws-project-workspace" # 自由に設定可
+    }
+  }
+}
+
 # VPC モジュール
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
